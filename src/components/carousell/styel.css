@@ -1,0 +1,11 @@
+/** @format */
+
+.my-carousel {
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 100px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,68 @@
+/** @format */
+
+@font-face {
+  font-family: "Peach Days";
+  src: local("Peach Days"),
+    url("../fonts/peach-days/Peach Days.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Coffe Tea";
+  src: local("Coffe Tea"),
+    url("../fonts/coffee-tea-1/coffee+teademo-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Vhiena Regular";
+  src: local("Vhiena Regular"),
+    url("../fonts/vhiena-font-1/Vhiena Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: "Vhiena Solid Shadow";
+  src: local("Vhiena Solid Shadow"),
+    url("../fonts/vhiena-font-1/Vhiena Solid Shadow.otf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: local("Poppins-Regular"),
+    url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: local("Poppins-Bold"),
+    url("../fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: local("Poppins-SemiBold"),
+    url("../fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+
+.font-face-pd {
+  font-family: "Peach Days";
+}
+.font-face-cft {
+  font-family: "Coffe Tea";
+}
+
+.font-face-Vhiena-Regular {
+  font-family: "Vhiena Regular";
+}
+
+.font-face-Vhiena-Solid-Shadow {
+  font-family: "Vhiena Solid Shadow";
+}
+
+.font-face-Poppins-Regular {
+  font-family: "Poppins-Regular";
+}
+
+.font-face-Poppins-Bold {
+  font-family: "Poppins-Bold";
+}
+
+.font-face-Poppins-SemiBold {
+  font-family: "Poppins-SemiBold";
+}
