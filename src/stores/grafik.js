@@ -11,6 +11,7 @@ const useGrafik = create(
   devtools((set, get) => ({
     dataGrafikKabupaten: [],
     dataGrafikKecamatan: [],
+    dataGrafikProdi: [],
     setGrafikKabupaten: async () => {
       //   const getToken = JSON.parse(localStorage.getItem("token"));
       try {
@@ -43,6 +44,29 @@ const useGrafik = create(
           },
         });
         set((state) => ({ ...state, dataGrafikKecamatan: res.data }));
+        return {
+          status: "berhasil",
+          data: res.data,
+        };
+      } catch (error) {
+        return {
+          status: "error",
+          error: error.response.data,
+        };
+      }
+    },
+    setGrafikProdi: async (fakultas_id = "") => {
+      //   const getToken = JSON.parse(localStorage.getItem("token"));
+      try {
+        const res = await api({
+          method: "get",
+          url: `/grafikProdi`,
+          //   headers: { Authorization: `Bearer ${getToken}` },
+          params: {
+            fakultas_id,
+          },
+        });
+        set((state) => ({ ...state, dataGrafikProdi: res.data }));
         return {
           status: "berhasil",
           data: res.data,

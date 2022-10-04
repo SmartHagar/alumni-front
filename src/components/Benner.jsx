@@ -23,7 +23,7 @@ const Benner = () => {
               <h1 className="font-face-Vhiena-Regular text-4xl mb-4 text-center dark:text-white">
                 Selamat datang di website
               </h1>
-              <p className="font-face-Vhiena-Solid-Shadow text-6xl mb-8 text-center">
+              <p className="font-face-Vhiena-Solid-Shadow text-6xl mb-8 text-center dark:text-white">
                 <Typed
                   strings={["Alumni Universitas Ottow Geissler Papua"]}
                   typeSpeed={150}

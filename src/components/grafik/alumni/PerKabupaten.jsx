@@ -32,18 +32,19 @@ const PerKabupaten = () => {
         bar: {
           columnWidth: "90%",
           distributed: true,
+          borderRadius: 10,
+          dataLabels: {
+            position: "center",
+            style: {
+              fontSize: "12px",
+              fontWeight: "bold",
+              colors: ["#ffffff"],
+            },
+          },
         },
       },
       theme: {
         palette: "palette2", // upto palette10
-      },
-      dataLabels: {
-        enabled: true,
-        style: {
-          fontSize: "12px",
-          fontWeight: "bold",
-          colors: ["#696565"],
-        },
       },
       legend: {
         show: false,

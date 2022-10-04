@@ -18,7 +18,6 @@ const PerDistrik = () => {
       categories.push(row.nm_kecamatan);
       data.push(row.jumlah);
     });
-    console.log(dataGrafikKecamatan);
     setOptions({
       chart: {
         height: 350,
@@ -31,20 +30,21 @@ const PerDistrik = () => {
       },
       plotOptions: {
         bar: {
-          columnWidth: "90%",
+          columnWidth: "80%",
           distributed: true,
+          borderRadius: 10,
+          dataLabels: {
+            position: "center",
+            style: {
+              fontSize: "12px",
+              fontWeight: "bold",
+              colors: ["#ffffff"],
+            },
+          },
         },
       },
       theme: {
-        palette: "palette2", // upto palette10
-      },
-      dataLabels: {
-        enabled: true,
-        style: {
-          fontSize: "12px",
-          fontWeight: "bold",
-          colors: ["#696565"],
-        },
+        palette: "palette3", // upto palette10
       },
       legend: {
         show: false,

@@ -7,22 +7,18 @@ import useUrl from "../services/base_url";
 // eslint-disable-next-line react-hooks/rules-of-hooks
 const { api } = useUrl();
 
-const useFakultas = create(
+const useKab = create(
   devtools((set, get) => ({
-    responses: {},
-    arrData: [],
-    dataFakultas: [],
-    setFakultas: async () => {
+    dataKab: [],
+    setKab: async () => {
       //   const getToken = JSON.parse(localStorage.getItem("token"));
       try {
         const res = await api({
           method: "get",
-          url: `/fakultas`,
+          url: `/districts`,
           //   headers: { Authorization: `Bearer ${getToken}` },
         });
-        set((state) => ({ ...state, responses: res }));
-        set((state) => ({ ...state, arrData: res.data }));
-        set((state) => ({ ...state, dataFakultas: res.data }));
+        set((state) => ({ ...state, dataKab: res.data }));
         return {
           status: "berhasil",
           data: res.data,
@@ -37,4 +33,4 @@ const useFakultas = create(
   }))
 );
 
-export default useFakultas;
+export default useKab;
