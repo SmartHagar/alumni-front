@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BgPage from "../../components/BgPage";
 import Header from "../../components/header/Header";
 import {
@@ -10,56 +10,17 @@ import {
 } from "react-icons/ai";
 
 import "./style.css";
+import useGaleri from "../../stores/galeri";
+import useUrl from "../../services/base_url";
 
 const Galeri = () => {
-  const list = [
-    {
-      judul: "Judul-1",
-      penulis: "penulis-1",
-      post_kegiatan: "post kegiatan-1",
-      gambar:
-        "https://images.unsplash.com/photo-1662581871665-f299ba8ace07?ixid=MnwzNDg0NDJ8MXwxfGFsbHwxfHx8fHx8Mnx8MTY2NDQ1NDc1MA&ixlib=rb-1.2.1",
-    },
-    {
-      judul: "Judul-2",
-      penulis: "penulis-2",
-      post_kegiatan: "post kegiatan-2",
-      gambar:
-        "https://images.unsplash.com/photo-1664309570712-564c233f112b?ixid=MnwzNDg0NDJ8MHwxfGFsbHwyfHx8fHx8Mnx8MTY2NDQ1NDc1MA&ixlib=rb-1.2.1",
-    },
-    {
-      judul: "Judul-3",
-      penulis: "penulis-3",
-      post_kegiatan: "post kegiatan-3",
-      gambar:
-        "https://images.unsplash.com/photo-1664393603138-a07aa623a582?ixid=MnwzNDg0NDJ8MHwxfGFsbHwzfHx8fHx8Mnx8MTY2NDQ1NDc1MA&ixlib=rb-1.2.1",
-    },
-    {
-      judul: "Judul-4",
-      penulis: "penulis-4",
-      post_kegiatan: "post kegiatan-4",
-      gambar:
-        "https://images.unsplash.com/photo-1664411179124-4fb6413a3e1e?ixid=MnwzNDg0NDJ8MHwxfGFsbHw0fHx8fHx8Mnx8MTY2NDQ1NDc1MA&ixlib=rb-1.2.1",
-    },
-    {
-      judul: "Judul-4",
-      penulis: "penulis-4",
-      post_kegiatan: "post kegiatan-4",
-      gambar:
-        "https://images.unsplash.com/photo-1664391026266-12aea2d987af?ixid=MnwzNDg0NDJ8MHwxfGFsbHw1fHx8fHx8Mnx8MTY2NDQ1NDc1MA&ixlib=rb-1.2.1",
-    },
-    {
-      judul: "Judul-5",
-      penulis: "penulis-5",
-      post_kegiatan: "post kegiatan-5",
-      gambar:
-        "https://images.unsplash.com/photo-1657299142312-5e12a754ff0e?ixid=MnwzNDg0NDJ8MXwxfGFsbHw2fHx8fHx8Mnx8MTY2NDQ1NDc1MA&ixlib=rb-1.2.1",
-    },
-  ];
+  const { setGaleri } = useGaleri();
+  const { BASE_URL } = useUrl();
 
   const [model, setModel] = useState(false);
   const [tmpImg, setTmpImg] = useState(null);
   const [index, setIndex] = useState();
+  const [list, setList] = useState(null);
 
   const getImg = (image) => {
     setTmpImg(image);
@@ -74,14 +35,26 @@ const Galeri = () => {
     setIndex(index + 1);
   };
 
+  useEffect(() => {
+    const fetch = async () => {
+      const data = await setGaleri();
+      setList(data.data);
+    };
+
+    fetch();
+  }, []);
+
   const showImages = () => {
     return (
       <div>
         {/* judul */}
         <div className="">
-          <h1 className="text-center font-face-pd text-2xl">Galeri Alumni</h1>
+          <h1 className="text-center font-face-pd text-2xl mb-3">
+            Galeri Alumni
+          </h1>
         </div>
-        ;{/* card */}
+        {console.log(list)}
+        {/* card */}
         <section className="overflow-hidden text-gray-700 ">
           <div className="container px-5 py-2 mx-auto lg:px-32">
             <div className="flex flex-wrap -m-1 md:-m-2 justify-center">
@@ -95,7 +68,7 @@ const Galeri = () => {
                       <img
                         alt="gallery"
                         className="cursor-pointer block object-cover object-center w-full h-full rounded-lg"
-                        src={row.gambar}
+                        src={`${BASE_URL}/${row.foto}`}
                         onClick={() => getImg(list, setIndex(index))}
                       />
                     </div>
@@ -118,9 +91,9 @@ const Galeri = () => {
               {tmpImg && (
                 <div>
                   <div className="h-144">
-                    <img src={tmpImg[index].gambar} alt="" />
-                    <h4 className="text-center font-face-Poppins-Regular text-pink-300 text-lg">
-                      Nama
+                    <img src={`${BASE_URL}/${tmpImg[index].foto}`} alt="" />
+                    <h4 className="text-center font-face-Poppins-Bold text-black text-lg -mt-3">
+                      {tmpImg[index].nm_alumni}
                     </h4>
                   </div>
                   <div id="close">

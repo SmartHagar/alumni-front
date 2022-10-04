@@ -7,20 +7,26 @@ import useUrl from "../services/base_url";
 // eslint-disable-next-line react-hooks/rules-of-hooks
 const { api } = useUrl();
 
-const useGaleri = create(
+const useAlumni = create(
   devtools((set, get) => ({
     responses: {},
-    arrData: [],
-    setGaleri: async () => {
+    dataAlumni: [],
+    setAlumni: async (show = 10, page = 1, prodi_id, nm_alumni = "") => {
       //   const getToken = JSON.parse(localStorage.getItem("token"));
       try {
         const res = await api({
           method: "get",
-          url: `/alumni/image`,
+          url: `/alumni`,
           //   headers: { Authorization: `Bearer ${getToken}` },
+          params: {
+            show,
+            page,
+            nm_alumni,
+            prodi_id,
+          },
         });
-        set((state) => ({ ...state, responses: res }));
-        set((state) => ({ ...state, arrData: res.data }));
+        set((state) => ({ ...state, responses: res.data }));
+        set((state) => ({ ...state, dataAlumni: res.data.data }));
         return {
           status: "berhasil",
           data: res.data,
@@ -35,4 +41,4 @@ const useGaleri = create(
   }))
 );
 
-export default useGaleri;
+export default useAlumni;
