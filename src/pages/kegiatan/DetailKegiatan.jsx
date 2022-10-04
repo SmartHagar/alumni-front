@@ -19,14 +19,16 @@ const DetailKegiatan = () => {
     <div className="kegiatan">
       {data.row && (
         <div>
-          <h1 className="text-center mb-6">{data.row.judul}</h1>
+          <h1 className="text-center mb-6 dark:text-gray-100">
+            {data.row.judul}
+          </h1>
           <img
             src={`${data.base_url}/${data.row.gambar}`}
             className="max-w-lg h-auto rounded-lg mx-auto"
             alt=""
           />
           <div
-            className="my-6"
+            className="my-6 dark:text-gray-100"
             dangerouslySetInnerHTML={{
               __html: data.row.post_kegiatan,
             }}

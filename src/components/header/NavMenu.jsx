@@ -79,14 +79,14 @@ const NavMenu = () => {
   const [heading, setHeading] = useState("");
   return (
     <nav className="navbar w-full">
-      <div className="lg:flex font-face-Poppins-SemiBold dark:text-gray-300">
+      <div className="lg:flex font-face-Poppins-SemiBold dark:text-gray-100">
         {links &&
           links.map((link, index) => (
             <div key={index} className="relative group ml-6 lg:ml-0">
               {link.submenu ? (
                 // jika ada sub link
                 <Link
-                  className="myNav my-2 lg:px-5 cursor-pointer hover:text-pink-700"
+                  className="myNav my-2 lg:px-5 cursor-pointer hover:text-pink-700 dark:hover:text-pink-500"
                   to="#"
                   onClick={() => {
                     heading !== link.name
@@ -98,7 +98,7 @@ const NavMenu = () => {
                 </Link>
               ) : (
                 <NavLink
-                  className="myNav my-2 lg:px-5 cursor-pointer hover:text-pink-700"
+                  className="myNav my-2 lg:px-5 cursor-pointer hover:text-pink-700 dark:hover:text-pink-500"
                   to={link.link}
                 >
                   {link.name}

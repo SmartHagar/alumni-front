@@ -81,14 +81,14 @@ const Dashboard = () => {
         <div className="my-2">
           {/* grafik kabupatan */}
           <div className="my-10">
-            <h1 className="text-center md:text-xl text-lg font-face-Poppins-Bold">
+            <h1 className="text-center md:text-xl text-lg font-face-Poppins-Bold dark:text-gray-100">
               Grafik Alumni Berdasarkan Kabupaten / Kota
             </h1>
             <PerKabupaten />
           </div>
           {/* grafik kecamatan */}
           <div className="my-10">
-            <h1 className="text-center md:text-xl text-lg font-face-Poppins-Bold">
+            <h1 className="text-center md:text-xl text-lg font-face-Poppins-Bold dark:text-gray-100">
               Grafik Alumni Berdasarkan Kecamatan / Distrik
             </h1>
             {/* pilih kabupaten */}
@@ -103,7 +103,7 @@ const Dashboard = () => {
           </div>
           {/* grafik Prodi */}
           <div className="my-10">
-            <h1 className="text-center md:text-xl text-lg font-face-Poppins-Bold">
+            <h1 className="text-center md:text-xl text-lg font-face-Poppins-Bold dark:text-gray-100">
               Grafik Alumni Berdasarkan Program Studi
             </h1>
             {/* pilih prodi */}

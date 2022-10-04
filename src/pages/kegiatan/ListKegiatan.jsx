@@ -17,7 +17,9 @@ const ListKegiatan = () => {
     <div>
       {/* judul */}
       <div className="mb-5">
-        <h1 className="text-center font-face-pd text-2xl">Kegiatan Alumni</h1>
+        <h1 className="text-center font-face-pd text-2xl dark:text-gray-100">
+          Kegiatan Alumni
+        </h1>
       </div>
       {/* card */}
       <div className="kegiatan grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-content-center place-items-center md:place-items-end">

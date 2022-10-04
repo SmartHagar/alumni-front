@@ -11,7 +11,7 @@ const StrukturOrganisasi = () => {
       <BgPage>
         {/* judul */}
         <div className="mb-5">
-          <h1 className="text-center font-face-pd text-2xl">
+          <h1 className="text-center font-face-pd text-2xl dark:text-gray-100">
             Struktur Organisasi
           </h1>
         </div>

@@ -49,7 +49,7 @@ const Galeri = () => {
       <div>
         {/* judul */}
         <div className="">
-          <h1 className="text-center font-face-pd text-2xl mb-3">
+          <h1 className="text-center font-face-pd text-2xl mb-3 dark:text-gray-100">
             Galeri Alumni
           </h1>
         </div>

@@ -20,10 +20,10 @@ const Benner = () => {
         <div className="grid h-full items-center gap-4 md:grid-cols-12">
           <div className="col-span-6 flex h-full flex-col items-center justify-center py-10 md:items-start md:py-20 xl:col-span-4">
             <div className="ml-8">
-              <h1 className="font-face-Vhiena-Regular text-4xl mb-4 text-center dark:text-white">
+              <h1 className="font-face-Vhiena-Regular text-4xl mb-4 text-center dark:text-gray-100">
                 Selamat datang di website
               </h1>
-              <p className="font-face-Vhiena-Solid-Shadow text-6xl mb-8 text-center dark:text-white">
+              <p className="font-face-Vhiena-Solid-Shadow text-6xl mb-8 text-center dark:text-gray-100">
                 <Typed
                   strings={["Alumni Universitas Ottow Geissler Papua"]}
                   typeSpeed={150}

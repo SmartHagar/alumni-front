@@ -11,7 +11,9 @@ const TentangKami = () => {
       <BgPage>
         {/* judul */}
         <div className="mb-5">
-          <h1 className="text-center font-face-pd text-2xl">Tentang Kami</h1>
+          <h1 className="text-center font-face-pd text-2xl dark:text-gray-100">
+            Tentang Kami
+          </h1>
         </div>
       </BgPage>
     </div>
