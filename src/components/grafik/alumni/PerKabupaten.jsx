@@ -72,7 +72,7 @@ const PerKabupaten = () => {
   }, [dataGrafikKabupaten]);
 
   return (
-    <div className="w-144 md:w-full">
+    <div className="">
       <div>
         {!loading && (
           <Chart

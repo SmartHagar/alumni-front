@@ -92,7 +92,7 @@ const Dashboard = () => {
               Grafik Alumni Berdasarkan Kecamatan / Distrik
             </h1>
             {/* pilih kabupaten */}
-            <div className="w-2/3 m-auto mt-3">
+            <div className="md:w-2/3 w-full m-auto mt-3">
               <Select
                 options={pilihanKab}
                 defaultValue={pilihanKab[0]}
@@ -107,7 +107,7 @@ const Dashboard = () => {
               Grafik Alumni Berdasarkan Program Studi
             </h1>
             {/* pilih prodi */}
-            <div className="w-2/3 m-auto mt-3">
+            <div className="md:w-2/3 w-full m-auto mt-3">
               <Select
                 options={pilihFak}
                 defaultValue={pilihFak[0]}

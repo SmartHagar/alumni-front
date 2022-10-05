@@ -26,7 +26,7 @@ const ModalComp = () => {
     alamat_lengkap,
     alamat_kantor,
   } = rowData;
-  console.log(rowData);
+  // console.log(rowData);
   return (
     <>
       {prodi && (
